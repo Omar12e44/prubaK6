@@ -20,7 +20,7 @@ jobs:
         uses: grafana/k6-action@v0.2.0
         with:
           # El nombre de tu script de K6
-          script: script.js 
+          filename: script.js 
           
           # "cloud: true" le dice que envíe los datos a Grafana
           cloud: true
