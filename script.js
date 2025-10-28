@@ -30,9 +30,7 @@ export default function () {
 
   sleep(1);
 
-  // --- Endpoint 2: Probar "Producto Específico" ---
   
-  // 👇 ESTA ES LA LÍNEA QUE CAMBIAMOS
   const randomProductID = productIDs[Math.floor(Math.random() * productIDs.length)];
   
   const productURL = `${BASE_URL}/productos/${randomProductID}`;
