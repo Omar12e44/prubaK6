@@ -1,0 +1,29 @@
+name: K6 Load Test
+
+# Esto le dice a GitHub que se ejecute CADA VEZ que haces "push"
+on:
+  push:
+    branches:
+      - main  # O "master", la rama principal que uses
+
+jobs:
+  k6_load_test:
+    runs-on: ubuntu-latest # Usará un servidor de Linux
+
+    steps:
+      # 1. Descarga tu código (tu script.js)
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # 2. Ejecuta la acción oficial de K6
+      - name: Run k6 test
+        uses: grafana/k6-action@v0.2.0
+        with:
+          # El nombre de tu script de K6
+          script: script.js 
+          
+          # "cloud: true" le dice que envíe los datos a Grafana
+          cloud: true
+        env:
+          # ¡Aquí es donde usa el Secreto que acabas de guardar!
+          K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
