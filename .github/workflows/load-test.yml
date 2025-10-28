@@ -21,10 +21,10 @@ jobs:
         with:
           # El nombre de tu script de K6
           filename: script.js 
+          token: ${{ secrets.K6_CLOUD_TOKEN }} # <-- ¡MUEVE EL TOKEN AQUÍ!
           
           # "cloud: true" le dice que envíe los datos a Grafana
           cloud: true
         env:
           # ¡Aquí es donde usa el Secreto que acabas de guardar!
-          K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
           K6_PROJECT_ID: ${{ secrets.K6_PROJECT_ID }}
