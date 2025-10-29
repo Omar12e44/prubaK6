@@ -26,5 +26,5 @@ jobs:
           # "cloud: true" le dice que envíe los datos a Grafana
           cloud: true
         env:
-          # ¡Aquí es donde usa el Secreto que acabas de guardar!
+          # ¡Aquí es donde usa   el Secreto que acabas de guardar!
           K6_PROJECT_ID: ${{ secrets.K6_PROJECT_ID }}
